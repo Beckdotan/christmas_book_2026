@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Christmas Hug That Crossed the Sea</title>
+<style>
+:root{
+  --bg:#f7efe1;
+  --paper:#fffaf0;
+  --ink:#3b3028;
+  --red:#a63d4f;
+  --green:#49644d;
+  --line:#dfd0b7;
+  --shadow:rgba(59,48,40,.24);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden}
+body{
+  min-height:100dvh;
+  display:grid;
+  grid-template-rows:1fr;
+  padding:0;
+  color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;
+  background:#2c2925;
+}
+.ambience{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#2c2925}
+.ambience::before{
+  content:"";position:absolute;inset:-7%;
+  background:url("references/location_grandparents_room.png") center/cover no-repeat;
+  filter:blur(16px) saturate(1.08) brightness(.88);
+  transform:scale(1.06);
+}
+.ambience::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(255,246,226,.24),rgba(255,246,226,0) 38%),
+    radial-gradient(circle at 16% 78%,rgba(255,118,44,.24),rgba(255,118,44,0) 24%),
+    linear-gradient(90deg,rgba(30,24,20,.58),rgba(30,24,20,.18) 45%,rgba(30,24,20,.58)),
+    linear-gradient(180deg,rgba(30,24,20,.24),rgba(30,24,20,.48));
+}
+.fireplace{
+  position:absolute;left:5.8vw;bottom:6.5vh;width:min(17vw,170px);height:min(12vw,118px);
+  border-radius:10px 10px 3px 3px;background:linear-gradient(#7b5030,#3a2419);
+  box-shadow:0 0 55px rgba(255,102,35,.34),inset 0 0 0 8px rgba(255,231,190,.22);
+  opacity:.82;z-index:2;
+}
+.fireplace::before{content:"";position:absolute;left:13%;right:13%;bottom:12%;height:50%;border-radius:8px;background:#211611;box-shadow:inset 0 6px 16px #000}
+.flame{position:absolute;bottom:20%;left:50%;width:20%;height:44%;border-radius:55% 55% 45% 45%;transform-origin:50% 100%;background:radial-gradient(circle at 50% 70%,#fff3a8 0 15%,#ff9d33 38%,#df421d 72%,transparent 73%);filter:blur(.2px);animation:flicker 1.15s infinite ease-in-out;z-index:3}
+.flame:nth-child(1){margin-left:-22%;animation-delay:-.2s}.flame:nth-child(2){margin-left:-3%;height:56%;animation-delay:-.55s}.flame:nth-child(3){margin-left:15%;animation-delay:-.85s}
+@keyframes flicker{0%,100%{transform:scaleX(.9) scaleY(.96) rotate(-2deg);opacity:.86}45%{transform:scaleX(1.12) scaleY(1.08) rotate(3deg);opacity:1}70%{transform:scaleX(.78) scaleY(.9) rotate(-4deg);opacity:.78}}
+.snow{display:block;position:absolute;inset:0;z-index:3;overflow:hidden}
+.snow i{position:absolute;top:-12%;width:18px;height:18px;color:rgba(255,255,255,.74);font-style:normal;text-align:center;line-height:18px;text-shadow:0 0 8px rgba(255,255,255,.55);animation:snowFall linear infinite}
+.snow i::before{content:"✻";font-size:inherit}
+.snow i:nth-child(1){left:4%;font-size:13px;animation-duration:38s;animation-delay:-2s}.snow i:nth-child(2){left:9%;font-size:9px;animation-duration:32s;animation-delay:-12s}.snow i:nth-child(3){left:14%;font-size:15px;animation-duration:44s;animation-delay:-7s}.snow i:nth-child(4){left:19%;font-size:10px;animation-duration:34s;animation-delay:-4s}.snow i:nth-child(5){left:24%;font-size:12px;animation-duration:46s;animation-delay:-15s}.snow i:nth-child(6){left:29%;font-size:8px;animation-duration:36s;animation-delay:-9s}.snow i:nth-child(7){left:34%;font-size:14px;animation-duration:42s;animation-delay:-18s}.snow i:nth-child(8){left:39%;font-size:10px;animation-duration:31s;animation-delay:-6s}.snow i:nth-child(9){left:44%;font-size:13px;animation-duration:45s;animation-delay:-11s}.snow i:nth-child(10){left:49%;font-size:8px;animation-duration:37s;animation-delay:-3s}.snow i:nth-child(11){left:54%;font-size:16px;animation-duration:48s;animation-delay:-19s}.snow i:nth-child(12){left:59%;font-size:10px;animation-duration:35s;animation-delay:-8s}.snow i:nth-child(13){left:64%;font-size:12px;animation-duration:41s;animation-delay:-16s}.snow i:nth-child(14){left:69%;font-size:9px;animation-duration:43s;animation-delay:-5s}.snow i:nth-child(15){left:74%;font-size:14px;animation-duration:33s;animation-delay:-13s}.snow i:nth-child(16){left:79%;font-size:11px;animation-duration:47s;animation-delay:-10s}.snow i:nth-child(17){left:84%;font-size:13px;animation-duration:36s;animation-delay:-1s}.snow i:nth-child(18){left:89%;font-size:9px;animation-duration:42s;animation-delay:-17s}.snow i:nth-child(19){left:94%;font-size:15px;animation-duration:38s;animation-delay:-14s}.snow i:nth-child(20){left:98%;font-size:10px;animation-duration:50s;animation-delay:-6s}
+@keyframes snowFall{from{transform:translate3d(0,-8vh,0)}to{transform:translate3d(-28px,118vh,0)}}
+body.snow-scene .ambience::before{filter:blur(18px) saturate(.85) brightness(.72);background-image:url("references/location_grandparents_room.png")}
+body.snow-scene .ambience::after{background:radial-gradient(circle at 50% 30%,rgba(200,225,255,.20),transparent 38%),linear-gradient(180deg,rgba(26,38,54,.38),rgba(8,14,23,.68)),linear-gradient(90deg,rgba(10,16,24,.56),rgba(10,16,24,.16),rgba(10,16,24,.56))}
+.fireplace{display:none}
+header{display:none}
+h1{font-size:clamp(1rem,2.4vw,1.35rem);font-style:italic;font-weight:400;color:var(--red)}
+header p{font-size:.76rem;color:var(--green);font-style:italic;margin-top:2px}
+main{min-height:100dvh;display:grid;place-items:center;position:relative;padding:0;background:transparent;z-index:1}
+.stage{position:relative;perspective:2600px;touch-action:pan-y}
+.book{position:relative;transform-style:preserve-3d;filter:drop-shadow(0 18px 22px var(--shadow))}
+.stage.spread{width:min(100vw,200dvh)}
+.stage.spread .book{width:100%;aspect-ratio:2/1}
+.stage.cover,.stage.single{width:min(100vw,100dvh)}
+.stage.cover .book,.stage.single .book{width:100%;aspect-ratio:1/1}
+.page,.coverPage,.phoneSheet,.leafFace{
+  background:var(--paper);
+  overflow:hidden;
+  border:1px solid var(--line);
+}
+.page img,.coverPage img,.phoneSheet img,.leafFace img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none}
+.coverPage{
+  position:absolute;inset:0;border-radius:10px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.45) inset;
+}
+.spreadView{position:absolute;inset:0;display:none;transform-style:preserve-3d}
+.stage.spread .spreadView{display:block}
+.stage.spread .coverPage{display:none}
+.page{position:absolute;top:0;bottom:0;width:50%}
+.leftPage{left:0;border-radius:10px 0 0 10px;border-right:0}
+.rightPage{right:0;border-radius:0 10px 10px 0;border-left:0}
+.spine{
+  position:absolute;top:0;bottom:0;left:50%;width:42px;margin-left:-21px;z-index:20;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(56,45,36,.10) 34%,rgba(56,45,36,.24) 50%,rgba(255,255,255,.16) 61%,transparent);
+}
+.pageNo{position:absolute;bottom:9px;z-index:10;font-size:.68rem;font-style:italic;color:#8d7d62;background:rgba(255,250,240,.78);border-radius:999px;padding:1px 7px}
+.leftPage .pageNo{left:10px}.rightPage .pageNo{right:10px}
+.turnLeaf{position:absolute;top:0;bottom:0;width:50%;z-index:40;display:none;transform-style:preserve-3d;pointer-events:none}
+.turnLeaf.right{left:50%;transform-origin:left center}.turnLeaf.left{left:0;transform-origin:right center}
+.leafFace{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 8px 24px rgba(56,45,36,.22)}
+.turnLeaf.right .front{border-radius:0 10px 10px 0;border-left:0}.turnLeaf.right .back{border-radius:10px 0 0 10px;border-right:0}
+.turnLeaf.left .front{border-radius:10px 0 0 10px;border-right:0}.turnLeaf.left .back{border-radius:0 10px 10px 0;border-left:0}
+.back{transform:rotateY(180deg)}
+.turnLeaf.forward{animation:turnForward .72s cubic-bezier(.42,.04,.22,1) forwards}
+.turnLeaf.backward{animation:turnBackward .72s cubic-bezier(.42,.04,.22,1) forwards}
+@keyframes turnForward{from{transform:rotateY(0)}to{transform:rotateY(-180deg)}}
+@keyframes turnBackward{from{transform:rotateY(0)}to{transform:rotateY(180deg)}}
+.turnLeaf::after{content:"";position:absolute;inset:0;z-index:4;opacity:.55;backface-visibility:hidden;background:linear-gradient(100deg,rgba(255,255,255,0) 20%,rgba(255,255,255,.55) 47%,rgba(52,39,30,.18) 85%)}
+.phoneStack{display:none;position:absolute;inset:0;transform-style:preserve-3d}
+.stage.single .phoneStack{display:block}.stage.single .spreadView,.stage.single .coverPage{display:none}
+.phoneSheet{position:absolute;inset:0;border-radius:10px;transform-origin:left center;transform-style:preserve-3d;transition:transform .58s cubic-bezier(.42,.04,.22,1);box-shadow:0 8px 22px rgba(56,45,36,.18)}
+.phoneSheet::after{content:"";position:absolute;inset:0;background:var(--paper);transform:rotateY(180deg);backface-visibility:hidden;border-radius:10px}
+.phoneSheet img{backface-visibility:hidden}.phoneSheet.flipped{transform:rotateY(-180deg)}
+.hit{position:absolute;top:0;bottom:0;width:46%;z-index:80;border:0;background:transparent;cursor:pointer}.hit.prev{left:0}.hit.next{right:0}
+.chev,.controls{display:none}
+.counter{font-size:.82rem;color:var(--green);font-style:italic}.bar{width:min(420px,70vw);height:4px;background:#e7d9bf;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#b9893d,var(--red));border-radius:999px;transition:width .22s}
+@media (max-width:760px){
+  body{padding:0}
+  header{min-height:25px} h1{font-size:1rem} header p{display:none}
+  .chev{width:38px;height:38px;font-size:1.45rem;background:rgba(255,250,240,.78)}
+  .bar{width:62vw}
+}
+</style>
+</head>
+<body>
+<div class="ambience" aria-hidden="true">
+  <div class="fireplace"><span class="flame"></span><span class="flame"></span><span class="flame"></span></div>
+  <div class="snow"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+<header>
+  <h1>The Christmas Hug That Crossed the Sea</h1>
+  <p>For Granny Maria and Grandpa Keith, with love from Lyla</p>
+</header>
+<main>
+  <section id="stage" class="stage cover" aria-label="Book preview">
+    <div class="book" id="book">
+      <div class="coverPage" id="coverPage"></div>
+      <div class="spreadView" id="spreadView">
+        <div class="page leftPage" id="leftPage"></div>
+        <div class="page rightPage" id="rightPage"></div>
+        <div class="spine"></div>
+        <div class="turnLeaf" id="turnLeaf">
+          <div class="leafFace front" id="leafFront"></div>
+          <div class="leafFace back" id="leafBack"></div>
+        </div>
+      </div>
+      <div class="phoneStack" id="phoneStack"></div>
+    </div>
+    <button class="hit prev" id="prevHit" aria-label="Previous page"></button>
+    <button class="hit next" id="nextHit" aria-label="Next page"></button>
+    <div class="chev left">‹</div>
+    <div class="chev right">›</div>
+  </section>
+</main>
+<div class="controls">
+  <div class="counter" id="counter"></div>
+  <div class="bar"><div class="fill" id="fill"></div></div>
+</div>
+<script>
+const IMAGES=[
+"book_pages_for_upload/01_front_cover.png",
+"book_pages_for_upload/02_first_page.png",
+"book_pages_for_upload/03_spread01_left_text.png",
+"book_pages_for_upload/04_spread01_right_illustration.png",
+"book_pages_for_upload/05_spread02_left_text.png",
+"book_pages_for_upload/06_spread02_right_illustration.png",
+"book_pages_for_upload/07_spread03_left_text.png",
+"book_pages_for_upload/08_spread03_right_illustration.png",
+"book_pages_for_upload/09_spread04_left_text.png",
+"book_pages_for_upload/10_spread04_right_illustration.png",
+"book_pages_for_upload/11_spread05_left_text.png",
+"book_pages_for_upload/12_spread05_right_illustration.png",
+"book_pages_for_upload/13_spread06_left_text.png",
+"book_pages_for_upload/14_spread06_right_illustration.png",
+"book_pages_for_upload/15_spread07_left_text.png",
+"book_pages_for_upload/16_spread07_right_illustration.png",
+"book_pages_for_upload/17_spread08_left_text.png",
+"book_pages_for_upload/18_spread08_right_illustration.png",
+"book_pages_for_upload/19_spread09_left_text.png",
+"book_pages_for_upload/20_spread09_right_illustration.png",
+"book_pages_for_upload/21_spread10_left_text.png",
+"book_pages_for_upload/22_spread10_right_illustration.png",
+"book_pages_for_upload/23_spread11_left_text.png",
+"book_pages_for_upload/24_spread11_right_illustration.png",
+"book_pages_for_upload/25_spread12_left_text.png",
+"book_pages_for_upload/26_spread12_right_illustration.png",
+"book_pages_for_upload/27_family_note_page.png",
+"book_pages_for_upload/28_back_cover.png"
+];
+const FIRST=1, FAMILY=26;
+const spreads=[];
+for(let i=2;i<=24;i+=2) spreads.push([i,i+1]);
+const lastView=spreads.length+3; // 0 cover, 1 opening page, 2-13 story spreads, 14 family note, 15 back cover
+let view=0, phoneIndex=0, mode='', busy=false;
+const stage=document.getElementById('stage'), coverPage=document.getElementById('coverPage');
+const leftPage=document.getElementById('leftPage'), rightPage=document.getElementById('rightPage');
+const leaf=document.getElementById('turnLeaf'), leafFront=document.getElementById('leafFront'), leafBack=document.getElementById('leafBack');
+const phoneStack=document.getElementById('phoneStack'), counter=document.getElementById('counter'), fill=document.getElementById('fill');
+function img(src){return `<img src="${src}" alt="" draggable="false">`;}
+function page(pageIndex, num){return `${img(IMAGES[pageIndex])}<span class="pageNo">${num}</span>`;}
+function isPhone(){return window.innerWidth<760;}
+function viewToPhone(v){if(v===0)return 0;if(v===1)return FIRST;if(v===lastView)return IMAGES.length-1;if(v===lastView-1)return FAMILY;return spreads[v-2][0];}
+function phoneToView(i){if(i===0)return 0;if(i===FIRST)return 1;if(i===FAMILY)return lastView-1;if(i===IMAGES.length-1)return lastView;return Math.floor((i-2)/2)+2;}
+function paintSingle(pageIdx){stage.className='stage cover';coverPage.innerHTML=img(IMAGES[pageIdx]);}
+function paintSpread(v){const [l,r]=spreads[v-2];stage.className='stage spread';leftPage.innerHTML=page(l,l+1);rightPage.innerHTML=page(r,r+1);}
+function label(){if(mode==='single')return `${phoneIndex+1} / ${IMAGES.length}`;if(view===0)return 'Front cover';if(view===1)return 'Opening page';if(view===lastView-1)return 'Family note';if(view===lastView)return 'Back cover';const [l,r]=spreads[view-2];return `Pages ${l+1}–${r+1}`;}
+function progress(){return mode==='single' ? (phoneIndex+1)/IMAGES.length : (view+1)/(lastView+1);}
+function updateUI(){counter.textContent=label();fill.style.width=`${progress()*100}%`;}
+function render(){
+  mode=isPhone()?'single':'spread';
+  document.body.dataset.mode=mode;
+  if(mode==='single'){phoneIndex=viewToPhone(view);buildPhone();}
+  else if(view===0)paintSingle(0);
+  else if(view===1)paintSingle(FIRST);
+  else if(view===lastView-1)paintSingle(FAMILY);
+  else if(view===lastView)paintSingle(IMAGES.length-1);
+  else paintSpread(view);
+  updateUI();
+}
+function setView(v){view=Math.max(0,Math.min(lastView,v));render();}
+function fadeTo(v){view=Math.max(0,Math.min(lastView,v));render();busy=false;}
+function turnForward(){
+  if(view<2||view>12){fadeTo(view+1);return;}
+  busy=true;
+  const [oldL,oldR]=spreads[view-2], [newL,newR]=spreads[view-1];
+  leftPage.innerHTML=page(oldL,oldL+1);
+  rightPage.innerHTML=page(newR,newR+1);
+  leaf.className='turnLeaf right';
+  leafFront.innerHTML=img(IMAGES[oldR]);
+  leafBack.innerHTML=img(IMAGES[newL]);
+  leaf.style.display='block';
+  void leaf.offsetWidth;
+  leaf.classList.add('forward');
+  setTimeout(()=>{view++;paintSpread(view);leaf.style.display='none';leaf.className='turnLeaf';busy=false;updateUI();},760);
+}
+function turnBackward(){
+  if(view<=2||view>13){fadeTo(view-1);return;}
+  busy=true;
+  const [oldL,oldR]=spreads[view-2], [newL,newR]=spreads[view-3];
+  leftPage.innerHTML=page(newL,newL+1);
+  rightPage.innerHTML=page(oldR,oldR+1);
+  leaf.className='turnLeaf left';
+  leafFront.innerHTML=img(IMAGES[oldL]);
+  leafBack.innerHTML=img(IMAGES[newR]);
+  leaf.style.display='block';
+  void leaf.offsetWidth;
+  leaf.classList.add('backward');
+  setTimeout(()=>{view--;paintSpread(view);leaf.style.display='none';leaf.className='turnLeaf';busy=false;updateUI();},760);
+}
+function buildPhone(){
+  stage.className='stage single';phoneStack.innerHTML='';
+  IMAGES.forEach((src,i)=>{const d=document.createElement('div');d.className='phoneSheet'+(i<phoneIndex?' flipped':'');d.style.zIndex=String(i<phoneIndex?i+1:IMAGES.length-i);d.innerHTML=img(src);phoneStack.appendChild(d);});
+}
+function phoneGo(n){
+  if(busy||n<0||n>=IMAGES.length||n===phoneIndex)return;
+  busy=true;
+  const sheets=[...phoneStack.children];
+  if(n>phoneIndex){sheets[phoneIndex].classList.add('flipped');phoneIndex=n;}
+  else{phoneIndex=n;sheets[phoneIndex].style.zIndex=String(IMAGES.length-phoneIndex);sheets[phoneIndex].classList.remove('flipped');}
+  sheets.forEach((sheet,i)=>{if(i<phoneIndex)sheet.style.zIndex=String(i+1);});
+  view=phoneToView(phoneIndex);updateUI();setTimeout(()=>busy=false,610);
+}
+function next(){if(busy)return;if(mode==='single')phoneGo(phoneIndex+1);else if(view>=lastView)return;else if(view===0)fadeTo(1);else turnForward();}
+function prev(){if(busy)return;if(mode==='single')phoneGo(phoneIndex-1);else if(view<=0)return;else turnBackward();}
+document.getElementById('nextHit').onclick=next;document.getElementById('prevHit').onclick=prev;
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev();});
+let startX=null;stage.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
+stage.addEventListener('touchend',e=>{if(startX===null)return;const dx=e.changedTouches[0].clientX-startX;if(dx<-35)next();if(dx>35)prev();startX=null;},{passive:true});
+let resizeTimer=null;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(render,120);});
+IMAGES.forEach(src=>{const im=new Image();im.src=src;});
+function applyBackground(){
+  document.body.classList.remove('snow-scene');
+}
+window.addEventListener('hashchange',applyBackground);
+applyBackground();
+render();
+</script>
+</body>
+</html>
